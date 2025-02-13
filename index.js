@@ -1,4 +1,8 @@
 import { Client, Events, GatewayIntentBits } from 'discord.js';
+import dotenv from 'dotenv';
+dotenv.config();
+
+
 
 const client = new Client({ intents: [GatewayIntentBits.Guilds, GatewayIntentBits.GuildMessages, GatewayIntentBits.MessageContent] });
 
@@ -9,4 +13,4 @@ client.on("messageCreate", (message) => {
     })
 })
 
-client.login('MTMzOTQ4NjI5MTI2NzQyMDI2Mw.Gd-adT.c1WJ-ANUisY0AAYIH_W3WQ8bdPK50zKlCuj_gQ')
+client.login(process.env.DISCORD_BOT_TOKEN)
